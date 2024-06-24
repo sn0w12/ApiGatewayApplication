@@ -6,55 +6,15 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: booking-service-bookroom
-          uri: lb://booking-service
+        - id: sushi-service
+          uri: lb://sushi-service
           predicates:
-            - Path=/api/v3/bookroom
+            - Path=/api/v3/**
 
-        - id: booking-service-updatebooking
-          uri: lb://booking-service
+        - id: WIGELL-TRAVELS
+          uri: lb://WIGELL-TRAVELS
           predicates:
-            - Path=/api/v3/updatebooking/{id}
-
-        - id: booking-service-mybookings
-          uri: lb://booking-service
-          predicates:
-            - Path=/api/v3/mybookings
-
-        - id: dish-service-sushis
-          uri: lb://dish-service
-          predicates:
-            - Path=/api/v3/sushis
-
-        - id: dish-service-sushis-id
-          uri: lb://dish-service
-          predicates:
-            - Path=/api/v3/sushis/{id}
-
-        - id: dish-service-add-dish
-          uri: lb://dish-service
-          predicates:
-            - Path=/api/v3/add-dish
-
-        - id: dish-service-deletedish
-          uri: lb://dish-service
-          predicates:
-            - Path=/api/v3/deletedish/{id}
-
-        - id: customer-service-customers
-          uri: lb://customer-service
-          predicates:
-            - Path=/api/v3/customers
-
-        - id: room-service-updateroom
-          uri: lb://room-service
-          predicates:
-            - Path=/api/v3/updateroom/{id}
-
-        - id: room-service-getroom
-          uri: lb://room-service
-          predicates:
-            - Path=/api/v3/rooms/{id}
+            - Path=/api/v2/**
 
         - id: currency-service-sektoeuro
           uri: lb://currency-service
